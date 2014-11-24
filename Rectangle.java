@@ -11,9 +11,9 @@ public class Rectangle extends AbstractGeometricalForm{
 
 	/**
 	 * Creates a rectangle.
-	 * @param x horizontal pos.
-	 * @param y vertical pos.
-	 * @param c The fill color.
+	 * @param x, horizontal pos.
+	 * @param y, vertical pos.
+	 * @param c, The fill color.
 	 * @param width.
 	 * @param height.
 	 * @throws IllegalPositionException if any x/y coordinate is negative. 
@@ -26,8 +26,8 @@ public class Rectangle extends AbstractGeometricalForm{
 		}
 	/**
 	 * Creates a rectangle from an already existing form.
-	 * @param f from with coordinates.
-	 * @param c The fill color.
+	 * @param f, from with coordinates.
+	 * @param c, The fill color.
 	 * @param width.
 	 * @param height.
 	 */

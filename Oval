@@ -1,0 +1,39 @@
+package geometri;
+
+import java.awt.Graphics;
+import java.awt.*;
+
+public class Oval extends AbstractGeometricalForm{
+		
+		private int width;
+		private int height;
+		
+	public Oval(int x, int y, int width, int height, Color c) throws IllegalPositionException{
+		super(x,y,c);
+		this.width=width;
+		this.height=height;
+	}
+	
+	public Oval(GeometricalForm f, int width, int height, Color c){
+		super(f,c);
+		this.width=width;
+		this.height=height;
+	}
+	
+	@Override
+	public void fill(Graphics g) {
+		g.fillOval(x, y, width, height);
+	}
+
+	@Override
+	public int getArea() {
+		return (int) Math.PI*width*height;
+	}
+
+	@Override
+	public int getPerimeter() {
+		// approximativ formel
+		return (int) (Math.PI*(3*(width+height-Math.sqrt((3*width+height)*(height+3*width)))));
+	}
+
+}

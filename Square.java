@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Square extends AbstractGeometricalForm{
 	
-	/** The lenght of the squers side */
+	/** The lenght of the squares side */
 	private int side;
 	
 	/**
@@ -28,25 +28,30 @@ public class Square extends AbstractGeometricalForm{
 	 * 
 	 */
 	public Square(GeometricalForm f, int side, Color c){
-		
+		super(f,c);
+		this.side = side;
 	}
-	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void fill(Graphics g) {
 		g.setColor(super.getColor());
 		g.fillRect(super.getX(), super.getY(), side, side);
 	}
-
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public int getArea() {
-		// TODO Auto-generated method stub
-		return getWidth()*getWidth();
+		return side*side;
 	}
-
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public int getPerimeter() {
-		// TODO Auto-generated method stub
-		return 4*(getWidth());
+		return 4*(side);
 	}
 
 }

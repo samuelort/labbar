@@ -36,8 +36,8 @@ public class Square extends AbstractGeometricalForm{
 	 */
 	@Override
 	public void fill(Graphics g) {
-		g.setColor(super.getColor());
-		g.fillRect(super.getX(), super.getY(), side, side);
+		g.setColor(getColor());
+		g.fillRect(getX(),getY(), side, side);
 	}
 	/**
 	 * {@inheritDoc}

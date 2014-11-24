@@ -1,0 +1,33 @@
+package geometri;
+
+import java.awt.*;
+import java.awt.Graphics;
+import java.lang.Math;
+
+public class Circle extends AbstractGeometricalForm {
+
+	private int diameter;
+	public Circle(int x, int y, int diameter, Color c) throws IllegalPositionException {
+		super(x, y, c);
+		this.diameter = diameter;
+	}
+	public Circle(GeometricalForm f, int diameter, Color c){
+		super(f, c);
+	}
+	
+	@Override
+	public int getArea(){
+		return (int) (Math.pow(diameter/2, 2) * Math.PI); 
+	}
+	
+	@Override
+	public int getPerimeter(){
+		return (int) (Math.PI*diameter);
+	}
+	
+	@Override
+	public void fill(Graphics g){
+		g.fillOval(getX(), getY(), diameter, diameter);
+	}
+	
+}

@@ -108,6 +108,7 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
 	 */
 	@Override
     public void move(int dx, int dy) throws IllegalPositionException{
+		if(x < 0 || y < 0){
 		place(this.x+dx,this.y + dy);
     }
 	/**

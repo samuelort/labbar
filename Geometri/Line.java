@@ -11,9 +11,11 @@ public class Line extends AbstractGeometricalForm{
 	private int y2;
 	
 	/**
-	 * k : the slope of the line between (x1,y1) and (x2,y2) 
+	 * the slope of the line
+	 * true if the slope is negative
 	 */
-	private int k;
+	private boolean negativeSlope;
+	
 	 /**
 	 * Creates a line.
 	 * @param x1,horizontal pos for first coordinate.
@@ -29,7 +31,7 @@ public class Line extends AbstractGeometricalForm{
 		this.x2=Math.max(x1,x2);
 		this.y2=Math.max(x1, x2);
 		
-		this.k=(int)(y2-y1)/(x2-x1);
+		this.negativeSlope = (int)(y2-y1)/(x2-x1) < 0;
 	}
     	 /**
 	 * Creates a rectangle.
@@ -43,6 +45,8 @@ public class Line extends AbstractGeometricalForm{
 		super(Math.min(f1.getX(), f2.getX()),Math.min(f1.getY(), f2.getY()),c);
 		this.x2=Math.max(f1.getX(),f2.getX());
 		this.y2=Math.max(f1.getY(), f2.getY());
+		
+		this.negativeSlope = (int)(this.y2-getY())/(this.x2-getX()) < 0;
 	}
 	/**
 	 * {@inheritDoc}
@@ -64,8 +68,8 @@ public class Line extends AbstractGeometricalForm{
 	 */
 	@Override
 	public int getPerimeter() {
-		int deltaX = this.x2 - getX();
-		int deltaY = this.y2 - getY();
+		int deltaX = this.x2 - getX(); //the base of the "triangle"
+		int deltaY = this.y2 - getY(); //the height of the "triangle"
 		return (int) Math.round(Math.sqrt((deltaX*deltaX) + (deltaY*deltaY))); //Pythagoras
 	}
 

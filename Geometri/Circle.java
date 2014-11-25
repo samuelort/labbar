@@ -35,14 +35,14 @@ public class Circle extends AbstractGeometricalForm {
 	 */
 	@Override
 	public int getArea(){
-		return (int) (Math.pow(diameter/2, 2) * Math.PI); 
+		return (int) Math.round((Math.pow(diameter/2, 2) * Math.PI)); 
 	}
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public int getPerimeter(){
-		return (int) (Math.PI*diameter);
+		return (int) Math.round((Math.PI*diameter));
 	}
 	/**
 	 * {@inheritDoc}

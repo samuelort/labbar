@@ -46,7 +46,7 @@ public class Oval extends AbstractGeometricalForm{
 	 */
 	@Override
 	public int getArea() {
-		return (int) Math.PI*width*height;
+		return (int) Math.round(Math.PI*width*height);
 	}
 	/**
 	 * {@inheritDoc}
@@ -54,7 +54,7 @@ public class Oval extends AbstractGeometricalForm{
 	@Override
 	public int getPerimeter() {
 		// approximativ formel
-		return (int) (Math.PI*(3*(width+height-Math.sqrt((3*width+height)*(height+3*width)))));
+		return (int) Math.round((Math.PI*(3*(width+height-Math.sqrt((3*width+height)*(height+3*width))))));
 	}
 
 }

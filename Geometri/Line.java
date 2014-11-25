@@ -48,7 +48,7 @@ public class Line extends AbstractGeometricalForm{
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void fill(Graphics g) { //har inte med så att lutningen spelar någon roll. får fixa det sen
+	public void fill(Graphics g) { 
 		g.setColor(getColor());
 		g.drawLine(getX(), getY(), x2, y2);
 	}

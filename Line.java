@@ -4,8 +4,15 @@ import java.awt.Graphics;
 import java.awt.*;
 
 public class Line extends AbstractGeometricalForm{
+	/**
+	 * x2,y2: the points at the end of the line
+	 */
 	private int x2;
 	private int y2;
+	
+	/**
+	 * k : the slope of the line between (x1,y1) and (x2,y2) 
+	 */
 	private int k;
 	
 	public Line(int x1, int y1, int x2, int y2, Color c) throws IllegalPositionException{
